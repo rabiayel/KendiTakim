@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="website.main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Kendi Takım</title>
+
+    <link href="/style.css" rel="stylesheet" /> 
+
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+
+    <script type="text/javascript">
+        $("document").ready(function () {
+            $(".giris-wrap").mouseover(function () {
+                $(".giris-wrap .giris").css("display", "block")  //mouse giriş yerine geldiğinde giriş içine yerleştirdiğimiz kayıt ve giriş işlemleri görünecek
+            })
+
+            $(".giris-wrap").mouseleave(function () {
+                $(".giris-wrap .giris").css("display", "none") //mouse giriş yerinden gittiğinde giriş alt tagları görünmeyecek 
+            })
+        })</script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+     <script src="sliderengine/jquery.js"></script>
+    <script src="sliderengine/amazingslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css" />
+    <script src="sliderengine/initslider-1.js"></script>
+
+</head>
+            
+<body>
+    <form id="form1" runat="server">
+          <div class="duzen" style="width:auto;height:35px;background-color:#e6bef1; color:#423e3e; line-height:35px;"> <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ürünleriniz de bizleri tercih ettiğiniz için teşekkür ederiz...</h3>
+             </div>
+        <div class="duzen2" ">
+            <div class="hizliKayit">
+                    <asp:Panel ID="pnlKayit" runat="server">
+                    <a href="Kaydol.aspx"  >&nbsp;&nbsp;&nbsp;&nbsp;Hızlı kayıt ol!</a>
+                        </asp:Panel>
+               </div>
+                      <div class="giris-wrap"  >
+                          <asp:Panel ID="pnlGiris" runat="server"  >
+                               &nbsp;&nbsp;&nbsp;&nbsp;
+                               Giriş
+                             <div class="giris" >                            
+                                             <span>Kullanıcı Adı:</span>
+                                          <asp:TextBox ID="txtKullaniciAdi" CssClass="txthizli" runat="server" />                                          
+                                         <span>Şifre:</span>
+                                             <asp:TextBox ID="txtSifre" CssClass="txthizli" runat="server" TextMode="Password"/>
+                                             <asp:Button ID="btnGiris" CssClass="btnGiris" Text="Giriş" runat="server" OnClick="btnGiris_Click"/> 
+                                             <asp:Label ID="lblSonuc" Text="" runat="server" />
+                                            <a href="sifremiunuttum.aspx">Şifremi unuttum?</a>  
+                                     </div>
+                               </asp:Panel>
+                           <asp:Panel ID="pnlKullanici" runat="server" >
+                                     <a href="Hesabim.aspx">Hesabım</a> <asp:Label ID="lblkullaniciAdi" Text=""  runat="server"/>                              
+                               <asp:Button ID="btnCikis" Text="Çıkış" CssClass="btnCikis" runat="server" OnClick="btnCikis_Click"/>
+                                 </asp:Panel>
+                          </div>
+        </div>
+
+         <header >
+                  <img src="logo/logo4.jpg" style="float:left; margin-left:720px;"  width="400" height="70" />
+                  
+               
+            
+                 <div class="arama">
+                     <asp:TextBox ID="txtArama" CssClass="txtArama" runat="server" placeholder="arama" />
+                     <asp:Button ID="btnArama" CssClass="btnArama" Text="Ara" runat="server" OnClick="btnArama_Click" /> 
+                 </div>
+             </header>
+
+        <div class="duzen3" >
+            <header>
+             <nav>
+                     <ul>
+                         <li><a href="/"> <h3>Anasayfa</h3> </a></li>
+                         <li><a href="iletisim.aspx"><h3>İletişim</h3> </a></li>             
+                         <li>&nbsp; </li>
+                     </ul>
+                 </nav>
+               </header>
+
+        </div>
+
+   <div class="slider" style="margin-top:115px;" >
+         <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:1600px;margin:0px auto 56px;">
+        <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto;">
+            <ul class="amazingslider-slides" style="display:none;">
+                <li><img src="images/slideshow_2.jpg" alt="" /></li>
+                <li><img src="images/slideshow_4.jpg" alt="" /> </li>
+            </ul>
+            <ul class="amazingslider-thumbnails" style="display:none;">
+                <li><img src="images/slideshow_2-tn.jpg" alt="" /></li>
+                <li><img src="images/slideshow_4-tn.jpg" alt="" /></li>
+            </ul>
+        <div class="amazingslider-engine"><a href="http://amazingslider.com" title="Responsive jQuery Slideshow">Responsive jQuery Slideshow</a></div>
+        </div>
+    </div>
+    </div>
+   
+         <div id="wrapper">                      
+              <div class="icerik">
+                  <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">   
+                    </asp:ContentPlaceHolder>
+             </div>
+       </div> 
+              
+          <%--   <footer>
+                 Bir Rabia YEL Tasarımıdır *2015
+             </footer>--%>
+    </form>
+</body>
+</html>

@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+  dslVersion="1.0.0.0"
+  Id="62ec5554-6955-43c3-a22a-ebc0e0579f22"
+  name="use-case" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <actor
+        Id="59c91059-a139-48ee-99e9-e057e9ce2128"
+        name="Kullanıcı"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="e2da4a3d-8e8c-4ad1-88ec-95e4893dfd46">
+            <useCaseMoniker
+              Id="fb1edc03-0e90-4d2c-bbd6-743f90c28da1"
+              LastKnownName="Login"
+              LastKnownLocation="use-case.uml" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fb1edc03-0e90-4d2c-bbd6-743f90c28da1"
+        name="Login"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="25f3ddf7-a770-4c5f-8553-3a390f06f029">
+            <useCaseMoniker
+              Id="0a1db779-0be3-4461-94f7-4839c419fd8e"
+              LastKnownName="Kullanıcı Modülü"
+              LastKnownLocation="use-case.uml" />
+          </extend>
+          <extend
+            Id="cd02acbe-d615-4586-bf4e-9d4b580e1904">
+            <useCaseMoniker
+              Id="066e4d7c-9c47-4788-b5b9-f162a9759fea"
+              LastKnownName="Ürün Modülü "
+              LastKnownLocation="use-case.uml" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="92896aeb-b990-4d46-abea-64a773b95b4f"
+        name="Adı"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0a1db779-0be3-4461-94f7-4839c419fd8e"
+        name="Kullanıcı Modülü"
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="ed644eba-85d8-4c0e-86d5-439ed07c451e">
+            <useCaseMoniker
+              Id="066e4d7c-9c47-4788-b5b9-f162a9759fea"
+              LastKnownName="Ürün Modülü "
+              LastKnownLocation="use-case.uml" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include
+            Id="1e4575a5-e0a8-4466-9a8d-8ea3084c1b4d">
+            <useCaseMoniker
+              Id="92896aeb-b990-4d46-abea-64a773b95b4f"
+              LastKnownName="Adı"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="3cbb6634-297a-4cc0-8b64-df340e010f6e">
+            <useCaseMoniker
+              Id="33703795-188f-48ff-bbe5-33341d78c52b"
+              LastKnownName="Şifre"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="1f8a860b-17f8-4cae-8606-a5521c3446b6">
+            <useCaseMoniker
+              Id="4aacb06b-003c-4ae3-a21c-2406df531ac8"
+              LastKnownName="Mail"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="fc4debe8-9a84-4b33-8f42-264e93b81824">
+            <useCaseMoniker
+              Id="5ae753f9-9fb9-4e32-b9ba-a3b5ac1d9c79"
+              LastKnownName="Telefon"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="b1b7a144-39fb-458d-932d-aa8eacbc6305">
+            <useCaseMoniker
+              Id="0905e129-17e5-404e-95f2-00f45ec649df"
+              LastKnownName="Adres"
+              LastKnownLocation="use-case.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="33703795-188f-48ff-bbe5-33341d78c52b"
+        name="Şifre"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4aacb06b-003c-4ae3-a21c-2406df531ac8"
+        name="Mail"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5ae753f9-9fb9-4e32-b9ba-a3b5ac1d9c79"
+        name="Telefon"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0905e129-17e5-404e-95f2-00f45ec649df"
+        name="Adres"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="066e4d7c-9c47-4788-b5b9-f162a9759fea"
+        name="Ürün Modülü "
+        isAbstract="false"
+        isLeaf="false">
+        <extendedCases>
+          <extend
+            Id="698347b9-cbb6-49fe-bde9-b18380dbb0a8">
+            <useCaseMoniker
+              Id="b10c9e88-485c-4e2a-857f-afc51bbd071b"
+              LastKnownName="Sipariş Modülü"
+              LastKnownLocation="use-case.uml" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include
+            Id="b1043875-2113-4e20-ad74-e845994f6656">
+            <useCaseMoniker
+              Id="17f1dbd4-c5db-4ccc-9a62-2b60e617119e"
+              LastKnownName="KullanıcıAdı"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="ab615976-337d-4ca7-8217-df9a1d6622c9">
+            <useCaseMoniker
+              Id="e39c9f97-56f4-435c-b35c-134f0df80558"
+              LastKnownName="UrunAdı"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="ed925f6e-e792-4c8f-90bd-e763ac583924">
+            <useCaseMoniker
+              Id="99308a14-aa11-43b4-bf3b-a9db739517cb"
+              LastKnownName="Açıklama"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="6a0bbe87-e241-4ccd-a75c-bc6dcf3d769e">
+            <useCaseMoniker
+              Id="b28ebb6d-6426-4ac8-a128-ff0d0ec92f58"
+              LastKnownName="ÜrünResmi"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="306916f8-4b20-45d3-8757-935c3782272d">
+            <useCaseMoniker
+              Id="3e679ef5-e2ad-4957-a36c-5e05e01dec3a"
+              LastKnownName="Fiyat"
+              LastKnownLocation="use-case.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="17f1dbd4-c5db-4ccc-9a62-2b60e617119e"
+        name="KullanıcıAdı"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e39c9f97-56f4-435c-b35c-134f0df80558"
+        name="UrunAdı"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="3e679ef5-e2ad-4957-a36c-5e05e01dec3a"
+        name="Fiyat"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b28ebb6d-6426-4ac8-a128-ff0d0ec92f58"
+        name="ÜrünResmi"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="99308a14-aa11-43b4-bf3b-a9db739517cb"
+        name="Açıklama"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b10c9e88-485c-4e2a-857f-afc51bbd071b"
+        name="Sipariş Modülü"
+        isAbstract="false"
+        isLeaf="false">
+        <additions>
+          <include
+            Id="78b44147-129a-429e-aa8e-b04d3b2ee34d">
+            <useCaseMoniker
+              Id="d7e22bdc-a0fa-47b8-98f9-a57e136ffe12"
+              LastKnownName="KullanıcıAdı"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="6abbeb72-d12f-40ba-a5a5-3a92310ad214">
+            <useCaseMoniker
+              Id="feda8844-a18d-4feb-9c84-2011e96f6557"
+              LastKnownName="UrunAdı"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="4555f814-d917-47b7-9525-edcb049944c8">
+            <useCaseMoniker
+              Id="836d91c4-b5bf-414f-b436-6bcfd514b3b3"
+              LastKnownName="Fiyat"
+              LastKnownLocation="use-case.uml" />
+          </include>
+          <include
+            Id="e425d7f9-8992-4ddc-b29b-cfa3cc1bf225">
+            <useCaseMoniker
+              Id="ece4d966-2521-4628-88a9-cfd02f9d3aa4"
+              LastKnownName="Ödeme"
+              LastKnownLocation="use-case.uml" />
+          </include>
+        </additions>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d7e22bdc-a0fa-47b8-98f9-a57e136ffe12"
+        name="KullanıcıAdı"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="feda8844-a18d-4feb-9c84-2011e96f6557"
+        name="UrunAdı"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="836d91c4-b5bf-414f-b436-6bcfd514b3b3"
+        name="Fiyat"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ece4d966-2521-4628-88a9-cfd02f9d3aa4"
+        name="Ödeme"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="375aa86b-c23e-4a97-a24b-5cc145ef409a"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>

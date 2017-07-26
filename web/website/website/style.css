@@ -1,0 +1,449 @@
+﻿body{
+    background-color:#edeaea; /*tüm arka plan*/
+    font-family: 'Trebuchet MS',Arial,'Colonna MT';    
+}
+
+.duzen2{
+    width:auto;
+    height:25px;
+    background-color:#f7f7f7;
+}
+.duzen3{
+     float:left;
+    width:100%;
+    height:45px;
+    background-color:black; 
+     color:#ffffff;
+
+}
+.duzen3 header{  
+    float:left;
+    width:100%;
+    height:45px;
+    background-color:black;  
+     color:#ffffff;
+}
+.duzen3 header nav{
+         float: left;
+         width: 609px;
+         height: 45px;  
+         margin-left:350px;      
+         line-height: 45px; /*li içindeki yazılar ortaklandı*/
+         color:#ffffff;
+     }
+.duzen3 header nav ul{
+         list-style:none; /*noktalarını sildik*/
+     }
+     .duzen3 header nav ul li{
+         float: left;/*yazılar yan yana durması için*/
+         margin: 0 15px; /*her li arasına 15px koydu böylece boşluk oluştu*/
+         color:#ffffff;
+     }
+
+*{
+    border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+a{
+    text-decoration: none;/*linkbuttonların altı çizgili olan yerlerini yok ettik*/
+    color: #555;
+}
+      a:hover{/*mouse üzerine geldiğinde rengi değişen linkbuttonlar */
+        color: red;
+       }
+
+/* <div id="" > gibi ... id tüm dosya için de bir tane olması gerekir id kullandığımızda wrapper başına # tagı getirilir*/
+ /*class atandığında stil vermek için başına . koyulur */
+     
+#wrapper{
+    width:1100px;
+    height:auto;
+    margin: 0 auto;
+    background-color:#ffffff; 
+}
+
+header{  
+    float:left;
+    width:100%;
+    height:70px;
+    background-color:#ffffff;  
+}
+  
+     header nav{
+         float: left;
+         width: 609px;
+         height: 70px;        
+         line-height: 70px; /*li içindeki yazılar ortaklandı*/
+     }
+     header nav ul{
+         list-style:none; /*noktalarını sildik*/
+     }
+     header nav ul li{
+         float: left;/*yazılar yan yana durması için*/
+         margin: 0 10px; /*her li arasına 15px koydu böylece boşluk oluştu*/
+         color: #0c393d;
+     }
+     header .arama{
+         margin-right:410px;
+         float: right;
+         width: 260px;
+         height: 45px;
+     }
+     header .arama .txtArama{
+          float: left;
+         padding: 10px;
+         line-height:50px;
+}
+     header .arama .btnArama{
+         margin-top:15px;
+         float: right;
+         width: 49px;
+         height: 40px;
+         background-color:#e6bef1;
+     }
+
+.icerik{
+    float: left;
+     width: 100%;
+     height:auto;
+     margin-top:15px;   
+}
+
+
+.guncelle{
+    float: right;
+    margin-right:410px;
+    width:auto;
+    height:25px;
+    text-align: center;
+    margin-top:15px;
+    margin-left:250px;
+
+}
+.guncelle .ust{                       
+          width:270px;
+          height:45px;
+          line-height:44px;
+          padding-left: 15px;
+          color: #555;
+          border-bottom: 1px solid #ccc;
+          background-color: #ffffff;
+          cursor: pointer;
+      }
+
+   .guncelle .alt {        
+          float: left;
+          width:250px;
+          height:auto;
+          padding: 17.5px;
+          border-bottom: 1px solid #ccc;
+          background-color: #ffffff;
+          
+    }
+    .guncelle .alt .sifre{
+         margin-top: 15px;
+     }
+
+       .guncelle .alt .e-mail{
+         margin-top: 15px;
+     }
+     
+
+         .guncelle .alt .textbox {
+            width: 228px;
+            padding: 10px;
+            height: 28px;    
+            border:  1px solid #ccc;
+
+        }
+       .guncelle .alt .btnGuncelle {
+              float: right; 
+                      width: 100px;
+                      height: 40px;
+                      line-height: 40px;
+                      text-align:center;
+                      color: #ffffff;
+                      background-color: #0099CC;
+                      cursor: pointer;
+                      margin-top: 10px;                  
+        }
+       
+         .guncelle .alt .btniptal {
+              float: left; 
+                      width: 100px;
+                      height: 40px;
+                      line-height: 40px;
+                      text-align:center;
+                      color: #0099CC;
+                      background-color: #ccc;
+                      cursor: pointer;
+                      margin-top: 10px;                  
+        }
+
+ .giris-wrap {
+           float:right;
+           position: relative;
+           width: auto;
+           height: 25px;    
+           margin: 0 auto;
+           z-index:3000;  /*giriş panelinin sliderin altında kalmasını engellemek için sliderdan daha yüksek index verdik*/
+}
+             .giris-wrap .giris {
+                 display: none;
+                 position: absolute;
+                 width:275px;
+                 height:auto;
+                padding:17.5px;
+                 background-color: #f5f4c5;
+             
+             }
+                  .giris-wrap .giris .txthizli {
+                       width: 248px;
+                       height: 38px;
+                       border: 1px solid #ccc;                    
+                  }
+
+               .giris-wrap .giris .btnGiris {  
+                      float: right; 
+                      width: 100px;
+                      height: 40px;
+                      line-height: 40px;
+                      text-align:center;
+                      color: #ffffff;
+                      background-color: #4155db;
+                      margin-top: 10px;                     
+                  }
+
+              .giris-wrap .giris .btnGiris .hizliKayit{
+                       float:left;
+                       width: 285px;
+                       height: 266px;
+                       background-color: #ffffff;
+                   }
+              
+                .btnCikis {        
+                      width: 100px;
+                      height: 25px;
+                      background-color:#f3c6c6  ;
+                      color: #ffffff;                 
+                  }
+
+     
+
+.hizliKayit{   
+    float: right;
+    margin-right:410px;
+    width:auto;
+    height:25px;
+    text-align: center;
+
+}
+      .hizliKayit .ust{                       
+          width:270px;
+          height:45px;
+          line-height:44px;
+          padding-left: 15px;
+          color: #555;
+          border-bottom: 1px solid #ccc;
+          background-color: #ffffff;
+          cursor: pointer;
+      }
+
+    .hizliKayit .alt {        
+          float: left;
+          width:250px;
+          height:auto;
+          padding: 17.5px;
+          border-bottom: 1px solid #ccc;
+          background-color: #ffffff;
+          
+    }
+    .hizliKayit .alt .kullanici{
+         margin-top: 15px;
+     }
+     .hizliKayit .alt .sifre{
+         margin-top: 15px;
+     }
+
+      .hizliKayit .alt .e-mail{
+         margin-top: 15px;
+     }
+     
+
+        .hizliKayit .alt .textbox {
+            width: 228px;
+            padding: 10px;
+            height: 28px;    
+            border:  1px solid #ccc;
+
+        }
+        .hizliKayit .alt .btnKayit {
+              float: right; 
+                      width: 100px;
+                      height: 40px;
+                      line-height: 40px;
+                      text-align:center;
+                      color: #ffffff;
+                      background-color: #0099CC;
+                      cursor: pointer;
+                      margin-top: 10px;                  
+        }
+       
+         .hizliKayit .alt .btniptal {
+              float: left; 
+                      width: 100px;
+                      height: 40px;
+                      line-height: 40px;
+                      text-align:center;
+                      color: #0099CC;
+                      background-color: #ccc;
+                      cursor: pointer;
+                      margin-top: 10px;                  
+        }
+
+footer{ /*html 5 tagı olduğu için başına . koymadık*/
+    float:left;
+    margin-top: 45px;/*yukarıdan 45px boşluk bıraktık*/
+    width: 100%;
+    height:50px;
+    background-color: #ffffff;
+    line-height: 50px; /*banner yazısını dikeyde ortaladık*/
+    text-align: center; /*yatayda ortaladık*/
+    font-size: 16px;
+}
+  
+.hesabim{
+    float:left;
+    width:100%;
+    background-color:#ffffff;
+}
+.hesabim .kisisel{
+    margin-top:15px;
+    margin-left:50px;
+    width:auto;
+    height:50px;
+    line-height:15px;
+    text-align: center;
+}
+    .hesabim .kisisel nav {
+        float: left;
+        margin-left:300px;
+         width: 609px;
+         height: 70px;        
+         line-height: 70px; /*li içindeki yazılar ortaklandı*/         
+    }
+    .hesabim .kisisel nav ul {
+        list-style: none; /*noktalarını sildik*/
+    }
+        .hesabim .kisisel nav ul li {
+            float:left;
+            margin: 0 10px; /*her li arasına 15px koydu böylece boşluk oluştu*/
+            color: #0c393d;
+        }
+        
+      
+.iletisim{
+    width:600px;
+    height:600px;
+    background-color:#ffffff;
+}   
+       .iletisim .ust{
+          float:left;
+          width:520px;
+          height:45px;
+          line-height:44px;
+          padding-left: 15px;
+          color: red;
+          border-bottom: 1px solid #ccc;
+          background-color: #ffffff;
+          cursor: pointer;
+          margin-left:25px;
+       }
+    .iletisim .alt {
+         float: left;
+          width:500px;
+          height:auto;
+          padding: 17.5px;
+          border-bottom: 1px solid #ccc;
+          background-color: #ffffff;
+    }
+
+    .iletisim .alt .textbox{
+        float:left;
+        width:250px;
+        height:25px;
+        padding: 10px;
+        border:  1px solid #ccc;
+        margin-right:10px;
+        margin-top:15px;
+
+    }
+     .iletisim .alt .txtMesaj{
+        float:left;
+        width:300px;
+        height:150px;
+        padding: 10px;
+        border:  1px solid #ccc;
+        margin-right:10px;
+        margin-top:15px;
+
+    }
+        .iletisim .alt .label1 {
+            float: left;
+            width:150px;
+            height:30px;
+            margin-top:30px;
+            margin-left:15px;
+        }
+        .iletisim .alt .label2 {
+            float: left;
+             width:150px;
+            height:30px;
+            margin-top:30px;
+            margin-left:15px;
+        }
+        .iletisim .alt .label3 {
+            float: left;
+             width:150px;
+            height:30px;
+            margin-top:30px;
+            margin-left:15px;
+        }
+        .iletisim .alt .label4 {
+            float: left;
+             width:150px;
+            height:30px;
+            margin-top:30px;
+            margin-left:15px;
+        }
+        .iletisim .alt .label5 {
+            float: left;
+             width:150px;
+            height:30px;
+            margin-top:30px;
+            margin-left:15px;
+        }
+        .iletisim .alt .btngonder {
+            float: right; 
+                      width: 100px;
+                      height: 40px;
+                      line-height: 40px;
+                      text-align:center;
+                      color: #ffffff;
+                      background-color: #4155db;
+                      margin-top: 10px;   
+        }
+
+
+
+
+
+
+
+

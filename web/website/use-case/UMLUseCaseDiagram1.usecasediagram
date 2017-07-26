@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ecf71d2d-7b04-42e0-bc0d-7f954a1102a0" name="UMLUseCaseDiagram1" linkedPackageId="e93024a0-0e1a-4d99-be91-7f3894975e00" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="f403c29d-1231-46e1-8940-d62c000c6eaf">
+      <profileInstance Id="d412492f-ae2a-4d21-9962-e6e93a0a8606" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="ce0d0904-329d-45ff-9005-2d94b8592aee">
+      <profileInstance Id="e709f325-c625-4e1f-b2bd-481d9d8b0036" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="a5f1fce2-d322-400e-9acf-e8d59bca7c39" name="Kullanıcı" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="59c91059-a139-48ee-99e9-e057e9ce2128" />
+        <suppliersInternal>
+          <dependency Id="fda42fef-71d6-4748-9217-9250a77d6481">
+            <useCaseMoniker Id="36b1c037-2631-45f2-81b1-468e968f85af" LastKnownName="Login" />
+            <elementDefinition Id="e2da4a3d-8e8c-4ad1-88ec-95e4893dfd46" />
+          </dependency>
+        </suppliersInternal>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="36b1c037-2631-45f2-81b1-468e968f85af" name="Login" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fb1edc03-0e90-4d2c-bbd6-743f90c28da1" />
+        <extendedCases>
+          <extend Id="5bf43ac0-a4d2-4c59-8ae1-cb737336f450">
+            <useCaseMoniker Id="12ff0991-c771-4ef1-b5d9-30049c2e4a7d" LastKnownName="Kullanıcı Modülü" />
+            <elementDefinition Id="25f3ddf7-a770-4c5f-8553-3a390f06f029" />
+          </extend>
+          <extend Id="1e91e395-6fe6-40df-ab21-9afc4a96911f">
+            <useCaseMoniker Id="ce6e84b0-5202-4774-982d-53dab4afa6cc" LastKnownName="Ürün Modülü " />
+            <elementDefinition Id="cd02acbe-d615-4586-bf4e-9d4b580e1904" />
+          </extend>
+        </extendedCases>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="30368058-0285-41a7-880f-66243f2bb0e1" name="Adı" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="92896aeb-b990-4d46-abea-64a773b95b4f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="12ff0991-c771-4ef1-b5d9-30049c2e4a7d" name="Kullanıcı Modülü" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0a1db779-0be3-4461-94f7-4839c419fd8e" />
+        <extendedCases>
+          <extend Id="5285ea00-3c1e-4f99-b049-81def6cb9edf">
+            <useCaseMoniker Id="ce6e84b0-5202-4774-982d-53dab4afa6cc" LastKnownName="Ürün Modülü " />
+            <elementDefinition Id="ed644eba-85d8-4c0e-86d5-439ed07c451e" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="c674f333-be24-49cb-ac99-4459b0794881">
+            <useCaseMoniker Id="30368058-0285-41a7-880f-66243f2bb0e1" LastKnownName="Adı" />
+            <elementDefinition Id="1e4575a5-e0a8-4466-9a8d-8ea3084c1b4d" />
+          </include>
+          <include Id="fbc39be8-d440-444d-8b87-e5e17a5b2d05">
+            <useCaseMoniker Id="a57deb11-f4c5-4022-a16d-09ca51848e8d" LastKnownName="Şifre" />
+            <elementDefinition Id="3cbb6634-297a-4cc0-8b64-df340e010f6e" />
+          </include>
+          <include Id="6c761456-bc72-4529-bedd-ee6058cbf575">
+            <useCaseMoniker Id="e8860ac4-3bf6-4f22-8061-2fb638e6703c" LastKnownName="Mail" />
+            <elementDefinition Id="1f8a860b-17f8-4cae-8606-a5521c3446b6" />
+          </include>
+          <include Id="ebcaf490-c0ed-40e3-9e39-8ed00a232fe2">
+            <useCaseMoniker Id="bf434f5a-8ed9-4fcf-b6de-45649ff4fc21" LastKnownName="Telefon" />
+            <elementDefinition Id="fc4debe8-9a84-4b33-8f42-264e93b81824" />
+          </include>
+          <include Id="8393b692-660b-4b1c-8f7e-e048d83cc3de">
+            <useCaseMoniker Id="c04788e6-3666-4421-a3ba-31e2a2ea8318" LastKnownName="Adres" />
+            <elementDefinition Id="b1b7a144-39fb-458d-932d-aa8eacbc6305" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a57deb11-f4c5-4022-a16d-09ca51848e8d" name="Şifre" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="33703795-188f-48ff-bbe5-33341d78c52b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e8860ac4-3bf6-4f22-8061-2fb638e6703c" name="Mail" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4aacb06b-003c-4ae3-a21c-2406df531ac8" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bf434f5a-8ed9-4fcf-b6de-45649ff4fc21" name="Telefon" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5ae753f9-9fb9-4e32-b9ba-a3b5ac1d9c79" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c04788e6-3666-4421-a3ba-31e2a2ea8318" name="Adres" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0905e129-17e5-404e-95f2-00f45ec649df" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ce6e84b0-5202-4774-982d-53dab4afa6cc" name="Ürün Modülü " isAbstract="false" isLeaf="false">
+        <elementDefinition Id="066e4d7c-9c47-4788-b5b9-f162a9759fea" />
+        <extendedCases>
+          <extend Id="bd65affe-0610-4d11-b9f1-a8d33eeea6c2">
+            <useCaseMoniker Id="ffb61e35-6da1-40cc-b3e5-1ab91c7652b6" LastKnownName="Sipariş Modülü" />
+            <elementDefinition Id="698347b9-cbb6-49fe-bde9-b18380dbb0a8" />
+          </extend>
+        </extendedCases>
+        <additions>
+          <include Id="85e048ce-7693-42b5-9850-066c3e2b77e2">
+            <useCaseMoniker Id="e541ae50-2e3d-4cb0-971d-1aab868ca264" LastKnownName="KullanıcıAdı" />
+            <elementDefinition Id="b1043875-2113-4e20-ad74-e845994f6656" />
+          </include>
+          <include Id="df0ebae2-be21-4d16-8fea-b4e3e0b5eaaf">
+            <useCaseMoniker Id="437377c6-a19d-4530-9984-85b199f86dce" LastKnownName="UrunAdı" />
+            <elementDefinition Id="ab615976-337d-4ca7-8217-df9a1d6622c9" />
+          </include>
+          <include Id="accb153c-c27b-4e86-825e-f26b532e837d">
+            <useCaseMoniker Id="1e39f8f1-4faa-4aa9-a401-bce701838dad" LastKnownName="Açıklama" />
+            <elementDefinition Id="ed925f6e-e792-4c8f-90bd-e763ac583924" />
+          </include>
+          <include Id="a1ca7f5a-9425-4886-babd-182bcd066849">
+            <useCaseMoniker Id="7c3e4377-f81d-469d-a853-ba55ae9f8b77" LastKnownName="ÜrünResmi" />
+            <elementDefinition Id="6a0bbe87-e241-4ccd-a75c-bc6dcf3d769e" />
+          </include>
+          <include Id="c958b319-5364-4fd8-86b4-7fea905e317b">
+            <useCaseMoniker Id="ef736433-907f-4bbb-a2b8-ddfcbf2f01ad" LastKnownName="Fiyat" />
+            <elementDefinition Id="306916f8-4b20-45d3-8757-935c3782272d" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e541ae50-2e3d-4cb0-971d-1aab868ca264" name="KullanıcıAdı" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="17f1dbd4-c5db-4ccc-9a62-2b60e617119e" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="437377c6-a19d-4530-9984-85b199f86dce" name="UrunAdı" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="e39c9f97-56f4-435c-b35c-134f0df80558" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ef736433-907f-4bbb-a2b8-ddfcbf2f01ad" name="Fiyat" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3e679ef5-e2ad-4957-a36c-5e05e01dec3a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7c3e4377-f81d-469d-a853-ba55ae9f8b77" name="ÜrünResmi" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b28ebb6d-6426-4ac8-a128-ff0d0ec92f58" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1e39f8f1-4faa-4aa9-a401-bce701838dad" name="Açıklama" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="99308a14-aa11-43b4-bf3b-a9db739517cb" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ffb61e35-6da1-40cc-b3e5-1ab91c7652b6" name="Sipariş Modülü" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="b10c9e88-485c-4e2a-857f-afc51bbd071b" />
+        <additions>
+          <include Id="686051d6-e799-4b32-b979-74f01e561ce9">
+            <useCaseMoniker Id="d57efdd7-12ea-4705-8902-613bf6dfe11e" LastKnownName="KullanıcıAdı" />
+            <elementDefinition Id="78b44147-129a-429e-aa8e-b04d3b2ee34d" />
+          </include>
+          <include Id="cce7c0cd-3c0d-458d-ae49-a48917524364">
+            <useCaseMoniker Id="7b17fd61-159c-4bee-bda9-7308a17000a7" LastKnownName="UrunAdı" />
+            <elementDefinition Id="6abbeb72-d12f-40ba-a5a5-3a92310ad214" />
+          </include>
+          <include Id="133c07f3-820c-488b-85c6-676781823963">
+            <useCaseMoniker Id="f408b055-6aa0-4db0-82ed-6e372d62fa9d" LastKnownName="Fiyat" />
+            <elementDefinition Id="4555f814-d917-47b7-9525-edcb049944c8" />
+          </include>
+          <include Id="50a8ae6d-8f64-47fc-87c3-872a70450309">
+            <useCaseMoniker Id="5ee04b52-1554-46cc-bf7d-d48dc1c2ae9a" LastKnownName="Ödeme" />
+            <elementDefinition Id="e425d7f9-8992-4ddc-b29b-cfa3cc1bf225" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d57efdd7-12ea-4705-8902-613bf6dfe11e" name="KullanıcıAdı" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d7e22bdc-a0fa-47b8-98f9-a57e136ffe12" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7b17fd61-159c-4bee-bda9-7308a17000a7" name="UrunAdı" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="feda8844-a18d-4feb-9c84-2011e96f6557" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f408b055-6aa0-4db0-82ed-6e372d62fa9d" name="Fiyat" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="836d91c4-b5bf-414f-b436-6bcfd514b3b3" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5ee04b52-1554-46cc-bf7d-d48dc1c2ae9a" name="Ödeme" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ece4d966-2521-4628-88a9-cfd02f9d3aa4" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="e93024a0-0e1a-4d99-be91-7f3894975e00" name="use-case">
+    <elementDefinition Id="62ec5554-6955-43c3-a22a-ebc0e0579f22" />
+  </package>
+</useCaseModelRoot>

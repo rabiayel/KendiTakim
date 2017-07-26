@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="UyeBilgileri.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="kullaniciBilgileri">
+          <Key>
+            <PropertyRef Name="KullaniciAdi" />
+          </Key>
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KullaniciSifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KullaniciMail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KullaniciTelefon" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KullaniciAdres" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ReadMoreUrl" Type="nvarchar(max)" />
+          <Property Name="LocLat" Type="varchar" MaxLength="50" />
+          <Property Name="LocLong" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FF36A39C44340A8168CD2361B3BE9C76_TUDIO 2013\PROJECTS\2.ELTAKıSITESI\2.ELTAKıSITESI\WEB\WEBSITE\WEBSITE\APP_DATA\UYEBILGILERI.MDF.dbo.Sepet' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Sepet">
+          <Key>
+            <PropertyRef Name="KullaniciAdi" />
+          </Key>
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UrunID" Type="int" />
+          <Property Name="Fiyat" Type="int" />
+          <Property Name="Adet" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FF36A39C44340A8168CD2361B3BE9C76_TUDIO 2013\PROJECTS\2.ELTAKıSITESI\2.ELTAKıSITESI\WEB\WEBSITE\WEBSITE\APP_DATA\UYEBILGILERI.MDF.dbo.siparis' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="siparis">
+          <Key>
+            <PropertyRef Name="KullaniciAdi" />
+          </Key>
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UrunID" Type="int" />
+          <Property Name="Adet" Type="int" />
+          <Property Name="Fiyat" Type="int" />
+          <Property Name="Tarih" Type="datetime" />
+        </EntityType>
+        <EntityType Name="urun">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UrunAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fiyat" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Resim" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Stoksayisi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_urun_Table">
+          <End Role="kullaniciBilgileri" Type="Self.kullaniciBilgileri" Multiplicity="1" />
+          <End Role="urun" Type="Self.urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullaniciBilgileri">
+              <PropertyRef Name="KullaniciAdi" />
+            </Principal>
+            <Dependent Role="urun">
+              <PropertyRef Name="KullaniciAdi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UyeBilgileriStoreContainer">
+          <EntitySet Name="kullaniciBilgileri" EntityType="Self.kullaniciBilgileri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="urun" EntityType="Self.urun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sepet" EntityType="Self.Sepet" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Sepet].[KullaniciAdi] AS [KullaniciAdi], 
+    [Sepet].[UrunID] AS [UrunID], 
+    [Sepet].[Fiyat] AS [Fiyat], 
+    [Sepet].[Adet] AS [Adet]
+    FROM [dbo].[Sepet] AS [Sepet]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="siparis" EntityType="Self.siparis" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [siparis].[KullaniciAdi] AS [KullaniciAdi], 
+    [siparis].[UrunID] AS [UrunID], 
+    [siparis].[Adet] AS [Adet], 
+    [siparis].[Fiyat] AS [Fiyat], 
+    [siparis].[Tarih] AS [Tarih]
+    FROM [dbo].[siparis] AS [siparis]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_urun_Table" Association="Self.FK_urun_Table">
+            <End Role="kullaniciBilgileri" EntitySet="kullaniciBilgileri" />
+            <End Role="urun" EntitySet="urun" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UyeBilgileri" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="kullaniciBilgileri">
+          <Key>
+            <PropertyRef Name="KullaniciAdi" />
+          </Key>
+          <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KullaniciSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KullaniciMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KullaniciTelefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KullaniciAdres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ReadMoreUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LocLat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LocLong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="urun" Relationship="Self.FK_urun_Table" FromRole="kullaniciBilgileri" ToRole="urun" />
+        </EntityType>
+        <EntityType Name="urun">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UrunAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fiyat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Resim" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Stoksayisi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="kullaniciBilgileri" Relationship="Self.FK_urun_Table" FromRole="urun" ToRole="kullaniciBilgileri" />
+        </EntityType>
+        <EntityType Name="Sepet">
+          <Key>
+            <PropertyRef Name="KullaniciAdi" />
+          </Key>
+          <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UrunID" Type="Int32" />
+          <Property Name="Fiyat" Type="Int32" />
+          <Property Name="Adet" Type="Int32" />
+        </EntityType>
+        <EntityType Name="siparis">
+          <Key>
+            <PropertyRef Name="KullaniciAdi" />
+          </Key>
+          <Property Name="KullaniciAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UrunID" Type="Int32" />
+          <Property Name="Adet" Type="Int32" />
+          <Property Name="Fiyat" Type="Int32" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_urun_Table">
+          <End Role="kullaniciBilgileri" Type="Self.kullaniciBilgileri" Multiplicity="1" />
+          <End Role="urun" Type="Self.urun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kullaniciBilgileri">
+              <PropertyRef Name="KullaniciAdi" />
+            </Principal>
+            <Dependent Role="urun">
+              <PropertyRef Name="KullaniciAdi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UyeBilgileriEntities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="kullaniciBilgileri" EntityType="Self.kullaniciBilgileri" />
+          <EntitySet Name="urun" EntityType="Self.urun" />
+          <EntitySet Name="Sepet" EntityType="Self.Sepet" />
+          <EntitySet Name="siparis" EntityType="Self.siparis" />
+          <AssociationSet Name="FK_urun_Table" Association="Self.FK_urun_Table">
+            <End Role="kullaniciBilgileri" EntitySet="kullaniciBilgileri" />
+            <End Role="urun" EntitySet="urun" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="UyeBilgileriStoreContainer" CdmEntityContainer="UyeBilgileriEntities5">
+          <EntitySetMapping Name="kullaniciBilgileri">
+            <EntityTypeMapping TypeName="UyeBilgileri.kullaniciBilgileri">
+              <MappingFragment StoreEntitySet="kullaniciBilgileri">
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="KullaniciSifre" ColumnName="KullaniciSifre" />
+                <ScalarProperty Name="KullaniciMail" ColumnName="KullaniciMail" />
+                <ScalarProperty Name="KullaniciTelefon" ColumnName="KullaniciTelefon" />
+                <ScalarProperty Name="KullaniciAdres" ColumnName="KullaniciAdres" />
+                <ScalarProperty Name="ReadMoreUrl" ColumnName="ReadMoreUrl" />
+                <ScalarProperty Name="LocLat" ColumnName="LocLat" />
+                <ScalarProperty Name="LocLong" ColumnName="LocLong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="urun">
+            <EntityTypeMapping TypeName="UyeBilgileri.urun">
+              <MappingFragment StoreEntitySet="urun">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="UrunAdi" ColumnName="UrunAdi" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Resim" ColumnName="Resim" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="Stoksayisi" ColumnName="Stoksayisi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sepet">
+            <EntityTypeMapping TypeName="UyeBilgileri.Sepet">
+              <MappingFragment StoreEntitySet="Sepet">
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="siparis">
+            <EntityTypeMapping TypeName="UyeBilgileri.siparis">
+              <MappingFragment StoreEntitySet="siparis">
+                <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+                <ScalarProperty Name="UrunID" ColumnName="UrunID" />
+                <ScalarProperty Name="Adet" ColumnName="Adet" />
+                <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
